@@ -19,6 +19,7 @@
             </lightning:layoutItem>
         </aura:iteration>
 
+
         <aura:if isTrue="{!v.boats.length==0}">
             <lightning:layoutItem class="slds-align_absolute-center" flexibility="auto" padding="around-small">
                 <ui:outputText value="No boats found"/>
