@@ -2,20 +2,22 @@
                 implements="flexipage:availableForAllPageTypes"
                 controller="BoatSearchResults">
 
-    <!--<aura:handler name="init" value="{!this}" action="{!c.search}"/>-->
+    <aura:handler name="init" value="{!this}" action="{!c.doSearch}"/>
+    <aura:handler name="BoatSelect" event="c:BoatSelect" action="{!c.onBoatSelect}"/>
 
     <aura:attribute name="boatTypeId" type="String"/>
     <aura:attribute name="boats" type="Boat__c[]"/>
+    <aura:attribute name="selectedBoatId" type="String"/>
 
-    <aura:method name="search" action="{!doSearch}"
+    <aura:method name="doSearch" action="{!c.doSearch}" access="PUBLIC"
                  description="search boats">
-        <aura:attribute name="boatTypeId" type="Id" />
+        <aura:attribute name="boatTypeId" type="String" />
     </aura:method>
 
     <lightning:layout horizontalAlign="center" multipleRows="true">
-        <aura:iteration items="{!v.boats}" var="b">
+        <aura:iteration items="{!v.boats}" var="boat">
             <lightning:layoutItem flexibility="grow" size="3" class="slds-m-right_small">
-                <c:BoatTile boat="{!b}"/>
+                <c:BoatTile boat="{!boat}" selected="{!boat.Id == v.selectedBoatId ? 'true' : 'false'}"/>
             </lightning:layoutItem>
         </aura:iteration>
 

@@ -1,6 +1,5 @@
 ({
     doInit: function (component, event, helper) {
-
         helper.loadBoatTypes(component);
     },
 
@@ -39,7 +38,7 @@
         createNewBoat.fire();
     },
     onFormSubmit: function (component) {
-        console.log("onFormSubmit.");
+        console.log("onFormSubmit. selectedType > " + component.get('v.selectedType'));
         var compEvent = component.getEvent("FormSubmit");
         compEvent.setParams({"formData" : component.get('v.selectedType')});
         compEvent.fire();

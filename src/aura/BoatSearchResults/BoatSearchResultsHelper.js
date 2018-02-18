@@ -1,8 +1,10 @@
 ({
-    onSearch: function (component, boatType) {
+    onSearch: function (component) {
+
         var boatType = component.get('v.boatTypeId');
         var action = component.get("c.getBoats");
 
+        console.log('>>> boatType > ' + boatType);
         // var boatType = component.get("v.boatTypeId");
         if (boatType) {
             action.setParams({"boatTypeId": boatType});
@@ -12,6 +14,7 @@
             if (state === "SUCCESS") {
                 var boats = response.getReturnValue();
                 // var boats = response.getReturnValue();
+
                 component.set("v.boats", boats);
             } else if (state === "ERROR") {
                 var errors = response.getError();
