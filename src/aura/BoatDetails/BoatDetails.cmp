@@ -1,6 +1,2 @@
-<!--
- - Created by anastasiiarudyk on 17/02/2018.
- -->
-
-<aura:component description="BoatDetails">
+<aura:component description="BoatDetails"  implements="flexipage:availableForAllPageTypes">
 </aura:component>
