@@ -40,7 +40,7 @@
     onFormSubmit: function (component) {
         console.log("onFormSubmit. selectedType > " + component.get('v.selectedType'));
         var compEvent = component.getEvent("FormSubmit");
-        compEvent.setParams({"formData" : component.get('v.selectedType')});
+        compEvent.setParams({"formData": component.get('v.selectedType')});
         compEvent.fire();
     }
-})
+});

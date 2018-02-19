@@ -5,12 +5,12 @@
                   action="{!c.onFormSubmit}"/>
 
     <div class="slds-media__body slds-m-bottom_xxx-small">
-            <lightning:card title="Find a Boat" class="slds-card">
-                <c:BoatSearchForm/>
-            </lightning:card>
+        <lightning:card title="Find a Boat" class="slds-card">
+            <c:BoatSearchForm/>
+        </lightning:card>
 
-            <lightning:card title="Matching Boats" class="slds-card">
-                <c:BoatSearchResults aura:id="boatSearchResult"/>
-            </lightning:card>
+        <lightning:card title="Matching Boats" class="slds-card">
+            <c:BoatSearchResults aura:id="boatSearchResult"/>
+        </lightning:card>
     </div>
 </aura:component>

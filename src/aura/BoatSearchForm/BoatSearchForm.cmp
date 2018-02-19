@@ -10,15 +10,15 @@
     <aura:handler name="launchNewBoatForm" event="c:launchNewBoatForm" action="{!c.handleNewBoatForm}"/>
 
     <!-- dynamically load the BoatTypes -->
-    <aura:attribute name="BoatTypes" type="BoatType__c[]" />
+    <aura:attribute name="BoatTypes" type="BoatType__c[]"/>
     <aura:attribute name="selectedType" type="String" default="foo"/>
     <aura:attribute name="renderNew" type="Boolean" default="true"/>
 
     <article class="slds-card slds-m-bottom_large">
         <div class="slds-media__body">
-            <div >
+            <div>
                 <lightning:layout horizontalAlign="center" verticalAlign="end">
-                    <lightning:layoutItem padding="horizontal-medium" >
+                    <lightning:layoutItem padding="horizontal-medium">
                         <!-- Create a dropdown menu with options -->
                         <lightning:select aura:id="boatTypes" label="" name="selectType"
                                           onchange="{!c.handleChange}">
@@ -31,9 +31,10 @@
                     </lightning:layoutItem>
 
 
-                    <lightning:layoutItem >
+                    <lightning:layoutItem>
                         <div class="slds-button-group" role="group">
-                            <lightning:button class="slds-button" variant="brand" label="Search" onclick="{!c.onFormSubmit}"/>
+                            <lightning:button class="slds-button" variant="brand" label="Search"
+                                              onclick="{!c.onFormSubmit}"/>
 
                             <!--
                             The form’s controller checks whether the event.force:createRecord event
@@ -42,7 +43,8 @@
                             -->
 
                             <aura:if isTrue="{!v.renderNew}">
-                                <lightning:button class="slds-button" variant="neutral" label="New" onclick="{!c.newBoat}"/>
+                                <lightning:button class="slds-button" variant="neutral" label="New"
+                                                  onclick="{!c.newBoat}"/>
                             </aura:if>
                         </div>
                     </lightning:layoutItem>

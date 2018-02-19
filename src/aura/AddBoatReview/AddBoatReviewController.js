@@ -1,6 +1,6 @@
 ({
-    onSave: function(component, event, helper) {
-        component.find("service").saveRecord(function(saveResult) {
+    onSave: function (component, event, helper) {
+        component.find("service").saveRecord(function (saveResult) {
             if (saveResult.state === "SUCCESS" || saveResult.state === "DRAFT") {
                 // record is saved successfully
                 var resultsToast = $A.get("e.force:showToast");
@@ -36,6 +36,6 @@
         cmp.set("v.setMeOnInit", "controller init magic!");
         helper.doInit();
 
-    },
+    }
 
-})
+});

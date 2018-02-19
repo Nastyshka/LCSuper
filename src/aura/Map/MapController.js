@@ -1,5 +1,5 @@
 ({
-    jsLoaded: function(component) {
+    jsLoaded: function (component) {
         component.set("v.jsLoaded", true);
-    }  
-})
+    }
+});

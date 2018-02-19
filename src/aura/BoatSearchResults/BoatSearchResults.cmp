@@ -11,7 +11,7 @@
 
     <aura:method name="doSearch" action="{!c.doSearch}" access="PUBLIC"
                  description="search boats">
-        <aura:attribute name="boatTypeId" type="String" />
+        <aura:attribute name="boatTypeId" type="String"/>
     </aura:method>
 
     <lightning:layout horizontalAlign="center" multipleRows="true">

@@ -2,13 +2,13 @@
  * Created by anastasiiarudyk on 18/02/2018.
  */
 ({
-    onInit : function(component, event, helper) {
+    onInit: function (component, event, helper) {
         // Prepare a new record from template
         component.find("service").getNewRecord(
             "BoatReview__c",
             null,
             false,
-            $A.getCallback(function() {
+            $A.getCallback(function () {
                 var rec = component.get("v.boatReview");
                 var error = component.get("v.recordError");
                 console.log('hey', JSON.stringify(rec));
@@ -23,4 +23,4 @@
             })
         );
     }
-})
+});
