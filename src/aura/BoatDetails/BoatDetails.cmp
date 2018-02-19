@@ -4,6 +4,7 @@
 
     <aura:attribute name="boat" type="Boat__c"/>
     <aura:attribute name="recordError" type="String"/>
+    <aura:attribute name="selTabId" type="String"/>
     <aura:attribute name="id" type="Id" default="" access="public"/>
 
     <aura:handler event="c:BoatSelected" action="{!c.onBoatSelected}"/>
@@ -28,12 +29,12 @@
 
     <aura:if isTrue="{! !empty(v.boat)}">
         <article class="slds-card">
-            <lightning:tabset>
+            <lightning:tabset aura:id="tabs">
                 <lightning:tab label="Details" id="details">
                     <c:BoatDetail boat="{!v.boat}"/>
                 </lightning:tab>
                 <lightning:tab label="Reviews" id="boatreviewtab">
-                    Sample review
+                    <c:BoatReviews boat="{!v.boat}" aura:id="boatReviews"/>
                 </lightning:tab>
                 <lightning:tab label="Add Review" id="addReview">
                     <c:AddBoatReview boat="{!v.boat}"/>

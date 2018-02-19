@@ -23,5 +23,13 @@
         });
         BoatSelectedEvt.fire();
 
+        var mapEvt = $A.get('e.c:PlotMapMarker');
+        mapEvt.setParams({
+            "long": boat.Geolocation__Longtitude__s,
+            "lat": boat.Geolocation__Latitude__s,
+            "sObjectOd": boat.Id,
+            "label": boat.Name
+        });
+        mapEvt.fire();
     }
-})
+});

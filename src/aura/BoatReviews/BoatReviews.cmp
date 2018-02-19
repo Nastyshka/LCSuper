@@ -1,0 +1,41 @@
+<aura:component description="BoatReviews" controller="BoatReviews"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global">
+
+    <aura:attribute name="boatReviews" type="BoatReview__c[]" access="private"/>
+    <aura:attribute name="boat" type="Boat__c" access="public"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.boat}" action="{!c.refresh}"/>
+
+    <aura:method name="refresh" action="{!c.doInit}" access="public"
+                 description="BoatDetailsController.js invokes refresh whenever boat is updated">
+    </aura:method>
+
+    <ui:scrollerWrapper class="scrollerSize">
+        <!--Scrollable content here -->
+        <aura:if isTrue="{!v.boatReviews.length==0}">
+            <lightning:layoutItem class="slds-align_absolute-center" flexibility="auto" padding="around-small">
+                <ui:outputText value="No Reviews Available"/>
+            </lightning:layoutItem>
+        </aura:if>
+        <div class="slds-feed">
+            <ul class="slds-feed__list">
+                <aura:iteration items="{!v.boatReviews}" var="boatReview">
+                    <li class="slds-feed__item">
+                        <div>
+                            <a href="javascript:void(0)" onclick="{!c.onUserInfoClick}"
+                               data-userid="{!boatReview.CreatedBy.Id}">
+                                {!boatReview.CreatedBy.Name}
+                            </a> - {!boatReview.CreatedBy.CompanyName}
+                        </div>
+                        <div>
+                            {!boatReview.CreatedDate}
+                        </div>
+                    </li>
+                    <c:FiveStarRating readonly="true" value="{!boatReview.Rating__c}"/>
+                </aura:iteration>
+            </ul>
+        </div>
+    </ui:scrollerWrapper>
+</aura:component>

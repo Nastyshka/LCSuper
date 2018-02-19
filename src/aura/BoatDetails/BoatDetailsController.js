@@ -20,7 +20,12 @@
 
     onBoatReviewAdded: function (component, event, helper) {
         console.log("Event received");
+        var tabsCmp = component.find("tabs");
+        tabsCmp.set("v.selectedTabId", "boatreviewtab");
         component.set("v.selTabId", "boatreviewtab");
+
+        var reviewsTabCmp = component.find("boatReviews");
+        reviewsTabCmp.refresh();
     }
 });
 // ({

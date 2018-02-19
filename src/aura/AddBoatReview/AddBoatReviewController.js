@@ -30,12 +30,16 @@
             }
         });
     },
-    doInit: function (cmp, event, helper) {
+    doInit: function (component, event, helper) {
         // Set the attribute value.
         // You could also fire an event here instead.
-        cmp.set("v.setMeOnInit", "controller init magic!");
-        helper.doInit();
+        component.set("v.setMeOnInit", "controller init magic!");
+        helper.onInit(component);
 
+    },
+
+    onRecordUpdated: function (component, event, helper) {
+        console.log('>>> onRecordUpdated >');
     }
 
 });

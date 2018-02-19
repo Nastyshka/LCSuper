@@ -1,6 +1,3 @@
-/**
- * Created by anastasiiarudyk on 18/02/2018.
- */
 ({
     onInit: function (component, event, helper) {
         // Prepare a new record from template
