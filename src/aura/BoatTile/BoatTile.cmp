@@ -1,7 +1,9 @@
-<aura:component description="BoatTile" access="global"
+<aura:component description="BoatTile"
+                access="global"
                 implements="flexipage:availableForAllPageTypes">
 
     <aura:registerEvent type="c:BoatSelect" name="BoatSelect"/>
+    <aura:registerEvent type="c:BoatSelected" name="BoatSelected"/>
 
     <aura:attribute name="boat" type="Boat__c"/>
     <aura:attribute name="selected" type="boolean" default="false"/>
